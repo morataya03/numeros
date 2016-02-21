@@ -1,0 +1,100 @@
+Estructura de Datos
+=======================
+
+PASO 1:		id_basic
+			carnet
+			nombres
+			apellidos
+			birthday
+			mod
+			usr_mod
+
+CREATE TABLE `info_basic` (
+`id_basic` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`carnet` VARCHAR( 8 ) NOT NULL ,
+`nombres` VARCHAR( 45 ) NOT NULL ,
+`apellidos` VARCHAR( 45 ) NOT NULL ,
+`birthday` DATE NOT NULL ,
+`mod` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+`usr_mod` VARCHAR( 10 ) NOT NULL
+) ENGINE = MYISAM ;
+
+
+PASO 2:		id_pers
+			carnet
+			direccion
+			telefono
+			celular
+			email
+			work
+			workplace
+			conversion
+			bautismo
+			mod
+			usr_mod
+
+CREATE TABLE `info_pers` (
+`id_pers` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`carnet` VARCHAR( 8 ) NOT NULL ,
+`direccion` VARCHAR( 70 ) NOT NULL ,
+`telefono` VARCHAR( 8 ) NULL ,
+`celular` VARCHAR( 8 ) NULL ,
+`email` VARCHAR( 30 ) NULL ,
+`work` VARCHAR( 25 ) NULL ,
+`workplace` VARCHAR( 40 ) NULL ,
+`conversion` DATE NULL ,
+`bautismo` DATE NULL ,
+`mod` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+`usr_mod` VARCHAR( 10 ) NOT NULL
+) ENGINE = MYISAM ;
+
+
+PASO 3:		id_serv
+			ministerio
+			servicio
+			cargo
+			mod
+			usr_mod
+
+CREATE TABLE `info_serv` (
+`id_serv` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`ministerio` INT( 3 ) NOT NULL ,
+`servicio` INT( 3 ) NOT NULL ,
+`cargo` INT( 3 ) NULL ,
+`mod` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+`usr_mod` VARCHAR( 10 ) NOT NULL
+) ENGINE = MYISAM ;
+
+
+PASO 4:		id_pic
+			file
+
+CREATE TABLE `info_pic` (
+`id_pic` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`file` INT( 12 ) NOT NULL ,
+`mod` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+`usr_mod` VARCHAR( 10 ) NOT NULL
+) ENGINE = MYISAM ;
+
+
+CAT_CULTO	id_culto
+			culto
+
+CAT_MINIS	id_min
+			ministerio
+
+CAT_SERV	id_ser
+			min_id
+			servicio
+
+CAT_CARG	id_carg
+			ser_id
+			min_id
+			cargo
+
+CAT_DEP		id_dep
+			depto
+
+CAT_MUN		id_mun
+			dep_id
+			muni
